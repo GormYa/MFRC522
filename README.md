@@ -1,11 +1,19 @@
 # MFRC522
-Raspberry Pi 3 üzerinde MFRC522 ile Mifare kartlarının seri numarasını okuyan uygulama
-<br /><br />
-Kullandığım MFRC522 kartındaki bağlantıyı;<br />
-RST pini Raspberry Pi cihazında 22 numaralı pine,<br />
-MOSI pini Raspberry Pi cihazında 19 numaralı pine,<br />
-MISO pini Raspberry Pi cihazında 21 numaralı pine,<br />
-SDA pini Raspberry Pi cihazında 24 numaralı pine,<br />
-3v pini Raspberry Pi cihazında 1 numaralı pine,<br />
-GND pini Raspberry Pi cihazında 9 numaralı pine bağladım.<br />
-IRQ pini boş kalmaktadır.
+Bu uygulama, MFRC522 destekli okuyucular/yazıcılar kullanarak Mifare kartlarının seri numarasını okur. Raspberry Pi 3 için tasarlanmıştır.
+
+## Okuyucu Raspberry Pi'ye nasıl bağlanır?
+
+Okuyucunuzu tabloya göre bağlayın, IRQ pinini bağlantısız bırakın.
+
+MFRC522 | Fiziksel pin | BCM numarasi
+------- | ------------ | ----------
+SDA     | 24           | 8
+SCK     | 23           | 11
+MOSI    | 19           | 10
+MISO    | 21           | 9
+IRQ     | ---          | ---
+GND     | 6*           | ---
+RST     | 22           | 25
+3.3V    | 1 veya 17    | ---
+
+\*Alternatif pinler (fiziksel): 9, 14, 20, 25, 30, 34 ve 39.
